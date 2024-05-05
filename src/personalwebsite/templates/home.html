@@ -6,4 +6,10 @@
 
 {% block content %}
 <p>This is the {{ title }} page</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-outline-success" type="submit">Submit</button>
+</form>
 {% endblock %}
