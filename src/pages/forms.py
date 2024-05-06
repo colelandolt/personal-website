@@ -1,9 +1,13 @@
 from django import forms
 from django.core.validators import validate_email
 
-class LandingPageForm(forms.Form):
-    name = forms.CharField(required=False)
-    email = forms.EmailField(validators=[validate_email])
+from .models import Subscriber
+
+class SubscriberModelForm(forms.ModelForm):
+
+    class Meta:
+        model = Subscriber
+        fields = ["name", "email"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

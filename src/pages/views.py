@@ -1,19 +1,19 @@
 from django.shortcuts import render
 
-from .forms import LandingPageForm
+from .models import Subscriber
+from .forms import SubscriberModelForm
 
 def home_page(request, *args, **kwargs):
     title = "Home"
-    form = LandingPageForm(request.POST or None)
+    form = SubscriberModelForm(request.POST or None)
     if form.is_valid():
-        print(form.cleaned_data.get("email"))
-        form = LandingPageForm()
+        obj = form.save()
 
     context = {
         "title": title,
         "form": form
     }
-    return render(request, "home.html", context)
+    return render(request, "pages/home.html", context)
 
 def about_page(request, *args, **kwargs):
     title = "About"
