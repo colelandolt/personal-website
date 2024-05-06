@@ -7,9 +7,11 @@
 {% block content %}
 <p>This is the {{ title }} page</p>
 
+{% if not request.session.subscribed %}
 <form method="POST">
     {% csrf_token %}
     {{ form }}
     <button class="btn btn-outline-success" type="submit">Submit</button>
 </form>
+{% endif %}
 {% endblock %}

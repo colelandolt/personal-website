@@ -1,13 +1,19 @@
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Subscriber
 from .forms import SubscriberModelForm
 
 def home_page(request, *args, **kwargs):
+
     title = "Home"
     form = SubscriberModelForm(request.POST or None)
     if form.is_valid():
         obj = form.save()
+        messages.success(request, "Thanks for joining!", extra_tags="alert-success")
+        request.session['subscribed'] = True
+        return HttpResponseRedirect("/")
 
     context = {
         "title": title,
@@ -20,4 +26,4 @@ def about_page(request, *args, **kwargs):
     context = {
         "title": title
     }
-    return render(request, "about.html", context)
+    return render(request, "pages/about.html", context)
