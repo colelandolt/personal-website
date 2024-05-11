@@ -9,6 +9,7 @@ def home_page(request, *args, **kwargs):
 
     title = "Home"
     form = SubscriberModelForm(request.POST or None)
+    request.session['subscribed'] = False
     if form.is_valid():
         obj = form.save()
         messages.success(request, "Thanks for joining!", extra_tags="alert-success")
