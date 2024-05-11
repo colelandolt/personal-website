@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Cole Landolt{% endblock %}</title>
     {% include "base/css.html" %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
-  <body>
+  <body class="body-bg">
     {% include "base/navbar.html" %}
+    {% include "base/messages.html" %}
 
     <div class="container-fluid">
     {% block content %}

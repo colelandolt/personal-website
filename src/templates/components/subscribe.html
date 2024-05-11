@@ -1,0 +1,23 @@
+{% block content %}
+{% load django_bootstrap5 %}
+
+<div class="row align-items-center p-5 m-5 rounded-3 border shadow-lg">
+    <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Subscribe to my newsletter!</p>
+        <p class="lead">Once a week I share my thoughts on...</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+
+        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            {% bootstrap_button button_type="submit" content="Subscribe" %}
+            <hr class="my-4">
+            <small class="text-body-secondary">You can unsubscribe at any time.</small>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

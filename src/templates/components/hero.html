@@ -1,0 +1,30 @@
+{% block content %}
+{% load static %}
+{% load bootstrap_icons %}
+
+<div class="row align-items-center p-5">
+    <div class="col-10 col-sm-8 col-lg-5">
+        <img src="{% static 'img/portrait.png' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-7">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi, I'm Cole.</h1>
+        <p class="lead">I'm a Data Scientist with a background in Market Research and Cognitive Science, translating structured and unstructured data into actionable insights that inform business decisions and increase revenue. I'm keenly interested in leveraging machine learning and artificial intelligence to understand interests and behaviors of consumers and users.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Resume</button>
+            <div class="d-sm-flex gap-2">
+                
+                <a href="https://www.linkedin.com/in/colelandolt/">
+                    <button type="button" class="btn icon-btn btn-sq-lg">{% bs_icon 'linkedin' size='50px' extra_classes="icon" %}</button>
+                </a>
+                <a href="https://github.com/colelandolt">
+                    <button type="button" class="btn icon-btn btn-sq-lg">{% bs_icon 'github' size='50px' extra_classes="icon" %}</button>
+                </a>
+                <a href="https://medium.com/@colelandolt">
+                    <button type="button" class="btn icon-btn btn-sq-lg">{% bs_icon 'medium' size='50px' extra_classes="icon" %}</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
