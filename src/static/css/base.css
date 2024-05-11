@@ -1,0 +1,34 @@
+.body-bg {
+    background-color: #F7F6F5;
+}
+.navbar {
+    margin: 1;
+    padding: 0;
+}
+.btn-primary {
+    color: #F7F6F5;
+    background-color: #2660A4;
+    border-color: #2660A4;
+}
+.btn-primary:hover {
+    color: #2660A4;
+    background-color: #F7F6F5;
+    border-color: #2660A4;
+}
+.btn-outline-secondary {
+    color: #2660A4;
+    background-color: #F7F6F5;
+    border-color: #2660A4;
+}
+.btn-outline-secondary:hover {
+    color: #F7F6F5;
+    background-color: #2660A4;
+    border-color: #2660A4;
+}
+.icon {
+    height: 50;
+    width: 50;
+}
+.icon-btn:hover {
+    color: #2660A4;
+}
