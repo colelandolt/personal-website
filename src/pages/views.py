@@ -28,3 +28,10 @@ def about_page(request, *args, **kwargs):
         "title": title
     }
     return render(request, "pages/about.html", context)
+
+def projects_page(request, *args, **kwargs):
+    title = "Projects"
+    context = {
+        "title": title
+    }
+    return render(request, "pages/projects.html", context)

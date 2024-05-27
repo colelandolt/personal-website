@@ -6,12 +6,6 @@
 
 {% block content %}
 
-{% include "components/hero.html" %}
-
-{% if not request.session.subscribed %}
-    {% include "components/subscribe.html" %}
-{% endif %}
-
 {% include "components/projects.html" %}
 
 {% endblock %}
